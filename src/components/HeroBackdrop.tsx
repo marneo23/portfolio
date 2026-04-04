@@ -1,0 +1,38 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useReducedMotion } from "@/lib/useReducedMotion";
+
+export default function HeroBackdrop() {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+  const scrollOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <div ref={ref} className="absolute inset-0 overflow-hidden">
+      <motion.img
+        src="/images/atmosphere/cats-posterized.jpg"
+        alt=""
+        role="presentation"
+        className="pointer-events-none absolute top-[0%] left-[-5%] w-[55%] max-w-[750px] select-none"
+        style={{
+          mixBlendMode: "lighten",
+          filter: "grayscale(1) contrast(1.8) brightness(1.2)",
+          y: reduced ? 0 : y,
+          opacity: reduced ? 0.12 : scrollOpacity,
+        }}
+        initial={reduced ? false : { opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 0.12, scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+      />
+    </div>
+  );
+}

@@ -1,0 +1,28 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #0E0E0E;
+  --bg-secondary: #1A1A1A;
+  --bg-texture: #141414;
+
+  /* Text */
+  --text-primary: #E8DCC8;
+  --text-muted: #8A8072;
+
+  /* Accents */
+  --accent-hot: #E63926;
+  --accent-warm: #D4A03C;
+  --accent-cool: #3B8C6E;
+
+  /* Utility */
+  --ink-black: #000000;
+  --flash-white: #FFFFFF;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-hero: clamp(3rem, 8vw, 7rem);
+}

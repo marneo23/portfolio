@@ -2,26 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "../styles/tokens.css";
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono), monospace;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: crosshair;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+a, button, [role="button"], input[type="submit"] {
+  cursor: pointer;
+}
+
+input, textarea {
+  cursor: text;
+}
+
+::selection {
+  background-color: var(--accent-hot);
+  color: var(--bg-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 0;
+}
+
+/* Visible focus styles — on-brand red outline */
+*:focus-visible {
+  outline: 2px solid var(--accent-hot);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--accent-hot);
+  color: var(--bg-primary);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Single grain layer — overlay adds grit to midtones without washing out text */
+@keyframes grain-shift {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-3%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+.grain {
+  inset: -15%;
+  mix-blend-mode: overlay;
+  opacity: 0.12;
+  animation: grain-shift 0.8s steps(2) infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+}
+
+@media (max-width: 768px) {
+  .grain {
+    opacity: 0.08;
+    animation-duration: 1.2s;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Crosshatch underlay — paper weave, barely visible but adds surface texture */
+.section-bg {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 3px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 3px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
