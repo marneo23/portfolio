@@ -22,10 +22,10 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/cats-posterized.jpg"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute top-[0%] left-[-5%] w-[42%] max-w-[560px] select-none"
+        className="pointer-events-none absolute bottom-[55%] md:bottom-0 left-[-5%] w-[42%] max-w-[560px] select-none"
         style={{
           mixBlendMode: "lighten",
-          filter: "grayscale(1) contrast(1.8) brightness(1.2)",
+          filter: "grayscale(1) contrast(1.6) brightness(0.95)",
           y: reduced ? 0 : y,
           opacity: reduced ? 0.12 : scrollOpacity,
         }}
@@ -37,7 +37,7 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/nubes.png"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute top-[0%] right-[-5%] w-[42%] max-w-[560px] select-none"
+        className="pointer-events-none absolute bottom-[55%] md:bottom-0 right-[0%] w-[42%] max-w-[560px] select-none"
         style={{
           mixBlendMode: "lighten",
           filter: "grayscale(1) contrast(1.8) brightness(1.2) invert(1)",
@@ -47,10 +47,10 @@ export default function HeroBackdrop() {
             "linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)",
           scaleX: -1,
           y: reduced ? 0 : y,
-          opacity: reduced ? 0.12 : scrollOpacity,
+          opacity: reduced ? 0.14 : scrollOpacity,
         }}
         initial={reduced ? false : { opacity: 0, scaleY: 1.05 }}
-        animate={{ opacity: 0.12, scaleY: 1 }}
+        animate={{ opacity: 0.14, scaleY: 1 }}
         transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
       />
     </div>
