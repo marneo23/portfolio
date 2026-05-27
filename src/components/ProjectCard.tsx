@@ -7,7 +7,6 @@ import type { Project } from "@/lib/projects";
 const BG_IMAGES = [
   "/images/bg/bg-0.jpg",
   "/images/bg/bg-1.jpg",
-  "/images/bg/bg-2.jpg",
   "/images/bg/bg-3.jpg",
   "/images/bg/bg-4.jpg",
   "/images/bg/bg-5.jpg",

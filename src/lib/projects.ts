@@ -12,6 +12,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "aerle",
+    title: "Aerle",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    summary:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    tags: ["TBD"],
+    codeUrl: "https://github.com/marneo23",
+  },
+  {
+    slug: "map",
+    title: "MAP",
+    description: "Multi-agent pipeline for orchestrating LLM workflows.",
+    summary:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    tags: ["Python", "LLM", "Agents"],
+    codeUrl: "https://github.com/marneo23",
+  },
+  {
     slug: "cinematch",
     title: "CineMatch",
     description: "Real-time movie matching platform with WebSocket integration.",
@@ -20,37 +38,12 @@ export const projects: Project[] = [
     tags: ["Node.js", "Socket.io", "PostgreSQL", "JWT", "Express"],
     liveUrl: "#",
     codeUrl: "https://github.com/marneo23",
-    featured: true,
   },
   {
-    slug: "taskboard",
-    title: "Taskboard API",
-    description: "Task management REST API with role-based access control.",
-    summary:
-      "Full CRUD API with JWT auth, RBAC middleware, input validation, and structured error handling. Built from scratch without AI to deepen understanding of auth patterns.",
-    tags: ["Node.js", "TypeScript", "Prisma", "PostgreSQL", "Express"],
-    liveUrl: "#",
-    codeUrl: "https://github.com/marneo23",
-    featured: true,
-  },
-  {
-    slug: "portfolio",
-    title: "This Portfolio",
-    description: "Wheat-paste inspired developer portfolio. You're looking at it.",
-    tags: ["Next.js", "React", "Framer Motion", "Tailwind CSS"],
-    codeUrl: "https://github.com/marneo23",
-  },
-  {
-    slug: "qa-framework",
-    title: "QA Automation Framework",
-    description: "Selenium + Cucumber test framework for production apps.",
-    tags: ["Selenium", "Cucumber", "Java", "CI/CD"],
-    codeUrl: "https://github.com/marneo23",
-  },
-  {
-    slug: "placeholder-1",
-    title: "Project Five",
-    description: "Coming soon — another project to showcase.",
+    slug: "nexus",
+    title: "Nexus",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["TBD"],
+    codeUrl: "https://github.com/marneo23",
   },
 ];

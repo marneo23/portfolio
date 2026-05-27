@@ -8,56 +8,63 @@ export default function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-20">
       <HeroBackdrop />
 
-      {/* Name — big stamped headline with misregistration */}
-      <div className="relative z-10 lg:translate-x-[12%]">
-        {/* Red offset shadow */}
-        <h1
-          aria-hidden="true"
-          className="absolute inset-0 select-none font-display text-hero uppercase leading-none"
-          style={{
-            color: "var(--accent-hot)",
-            transform: "translate(4px, 4px) rotate(-2deg)",
-            mixBlendMode: "multiply",
-          }}
+      {/* Title block — subtle backdrop to lift text off the cats */}
+      <div
+        className="relative z-10 flex flex-col items-center px-6 py-6 sm:px-10 sm:py-8"
+        style={{
+          backgroundColor: "color-mix(in srgb, var(--bg-primary) 55%, transparent)",
+          backdropFilter: "blur(2px)",
+          WebkitBackdropFilter: "blur(2px)",
+        }}
+      >
+        {/* Name — stamped headline with misregistration */}
+        <div className="relative text-center">
+          {/* Red offset shadow */}
+          <h1
+            aria-hidden="true"
+            className="absolute inset-0 select-none font-display uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            style={{
+              color: "var(--accent-hot)",
+              transform: "translate(4px, 4px) rotate(-2deg)",
+              mixBlendMode: "multiply",
+            }}
+          >
+            MARTIN<br />RODRIGUEZ
+          </h1>
+          {/* Main name */}
+          <motion.h1
+            className="relative font-display uppercase leading-[0.95] text-text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            style={{ transform: "rotate(-2deg)" }}
+            initial={reduced ? false : { scale: 1.4, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: reduced ? 0 : 0.35, ease: "easeOut", delay: reduced ? 0 : 0.2 }}
+          >
+            MARTIN<br />RODRIGUEZ
+          </motion.h1>
+        </div>
+
+        {/* Tagline — monospace subtitle */}
+        <motion.p
+          className="mt-6 font-body text-lg tracking-wide text-text-muted"
+          style={{ transform: "rotate(-0.5deg)" }}
+          initial={reduced ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reduced ? 0 : 0.3, delay: reduced ? 0 : 0.5 }}
         >
-          MART&Iacute;N
-        </h1>
-        {/* Main name */}
-        <motion.h1
-          className="relative font-display text-hero uppercase leading-none text-text-primary"
-          style={{ transform: "rotate(-2deg)" }}
-          initial={reduced ? false : { scale: 1.4, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: reduced ? 0 : 0.35, ease: "easeOut", delay: reduced ? 0 : 0.2 }}
-        >
-          MART&Iacute;N
-        </motion.h1>
+          Software Engineer
+        </motion.p>
       </div>
 
-      {/* Tagline — monospace subtitle */}
-      <motion.p
-        className="relative z-10 mt-4 font-body text-lg tracking-wide text-text-muted lg:translate-x-[12%]"
-        style={{ transform: "rotate(-0.5deg)" }}
-        initial={reduced ? false : { opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: reduced ? 0 : 0.3, delay: reduced ? 0 : 0.5 }}
-      >
-        Full-Stack Developer
-      </motion.p>
-
-      {/* Scroll indicator */}
+      {/* Scroll indicator — arrow only */}
       <motion.div
-        className="absolute bottom-10 flex flex-col items-center gap-2 text-text-muted"
+        className="absolute bottom-10 flex flex-col items-center text-text-muted"
         initial={reduced ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduced ? 0 : 0.9 }}
       >
-        <span className="font-body text-sm uppercase tracking-widest">
-          Scroll
-        </span>
         <motion.span
           className="text-2xl"
           animate={reduced ? {} : { y: [0, 8, 0] }}
