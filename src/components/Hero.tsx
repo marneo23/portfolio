@@ -8,7 +8,7 @@ export default function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative flex flex-col items-center justify-start overflow-hidden px-6 pt-[14vh] pb-16 lg:min-h-screen lg:justify-center lg:py-20">
+    <section className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden px-6 pt-[14vh] pb-16 lg:justify-center lg:py-20">
       <HeroBackdrop />
 
       {/* Title block — sits inside the cats/clouds frame */}
@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Red offset shadow */}
           <h1
             aria-hidden="true"
-            className="absolute inset-0 select-none font-display uppercase leading-[0.95] text-[clamp(1.25rem,6vw,4.5rem)]"
+            className="absolute inset-0 select-none font-display uppercase leading-[0.95] text-[clamp(2rem,10vw,4.5rem)]"
             style={{
               color: "var(--accent-hot)",
               transform: "translate(3px, 3px)",
@@ -36,7 +36,7 @@ export default function Hero() {
           </h1>
           {/* Main name */}
           <motion.h1
-            className="relative font-display uppercase leading-[0.95] text-text-primary text-[clamp(1.25rem,6vw,4.5rem)]"
+            className="relative font-display uppercase leading-[0.95] text-text-primary text-[clamp(2rem,10vw,4.5rem)]"
             initial={reduced ? false : { scale: 1.15, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: reduced ? 0 : 0.35, ease: "easeOut", delay: reduced ? 0 : 0.2 }}

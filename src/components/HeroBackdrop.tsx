@@ -22,10 +22,14 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/cats-posterized.jpg"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute top-[8vh] left-[-6%] w-[34%] max-w-[260px] select-none lg:top-auto lg:bottom-0 lg:left-[-5%] lg:w-[42%] lg:max-w-[560px]"
+        className="pointer-events-none absolute top-[8vh] left-[-6%] aspect-[9/16] w-[48%] max-w-[360px] object-cover select-none lg:top-auto lg:bottom-0 lg:left-[-5%] lg:aspect-auto lg:w-[42%] lg:max-w-[560px]"
         style={{
           mixBlendMode: "lighten",
           filter: "grayscale(1) contrast(1.6) brightness(0.95)",
+          maskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)",
           y: reduced ? 0 : y,
           opacity: reduced ? 0.12 : scrollOpacity,
         }}
@@ -37,14 +41,16 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/nubes.png"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute top-[8vh] right-[-6%] w-[34%] max-w-[260px] select-none lg:top-auto lg:bottom-0 lg:right-[0%] lg:w-[42%] lg:max-w-[560px]"
+        className="pointer-events-none absolute top-[8vh] right-[-6%] aspect-[9/16] w-[48%] max-w-[360px] object-cover select-none lg:top-auto lg:bottom-0 lg:right-[0%] lg:aspect-auto lg:w-[42%] lg:max-w-[560px]"
         style={{
           mixBlendMode: "lighten",
           filter: "grayscale(1) contrast(1.8) brightness(1.2) invert(1)",
           maskImage:
-            "linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)",
           WebkitMaskImage:
-            "linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)",
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
           scaleX: -1,
           y: reduced ? 0 : y,
           opacity: reduced ? 0.14 : scrollOpacity,
