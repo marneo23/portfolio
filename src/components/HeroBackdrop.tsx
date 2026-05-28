@@ -22,7 +22,7 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/cats-posterized.jpg"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute bottom-[55%] lg:bottom-0 left-[-5%] w-[42%] max-w-[560px] select-none"
+        className="pointer-events-none absolute top-[8vh] left-[-6%] w-[34%] max-w-[260px] select-none lg:top-auto lg:bottom-0 lg:left-[-5%] lg:w-[42%] lg:max-w-[560px]"
         style={{
           mixBlendMode: "lighten",
           filter: "grayscale(1) contrast(1.6) brightness(0.95)",
@@ -37,7 +37,7 @@ export default function HeroBackdrop() {
         src="/images/atmosphere/nubes.png"
         alt=""
         role="presentation"
-        className="pointer-events-none absolute bottom-[55%] lg:bottom-0 right-[0%] w-[42%] max-w-[560px] select-none"
+        className="pointer-events-none absolute top-[8vh] right-[-6%] w-[34%] max-w-[260px] select-none lg:top-auto lg:bottom-0 lg:right-[0%] lg:w-[42%] lg:max-w-[560px]"
         style={{
           mixBlendMode: "lighten",
           filter: "grayscale(1) contrast(1.8) brightness(1.2) invert(1)",

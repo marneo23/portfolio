@@ -8,7 +8,7 @@ export default function Hero() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-20">
+    <section className="relative flex flex-col items-center justify-start overflow-hidden px-6 pt-[14vh] pb-16 lg:min-h-screen lg:justify-center lg:py-20">
       <HeroBackdrop />
 
       {/* Title block — sits inside the cats/clouds frame */}
